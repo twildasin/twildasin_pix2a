@@ -760,7 +760,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
    */
   private class PictureExplorerFocusTraversalPolicy
     extends FocusTraversalPolicy {
-    
+
     /**
      * Method to get the next component for focus
      */
@@ -768,10 +768,10 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
                                        Component aComponent) {
       if (aComponent.equals(colValue))
         return rowValue;
-      else 
+      else
         return colValue;
     }
-    
+
     /**
      * Method to get the previous component for focus
      */
@@ -779,18 +779,18 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
                                         Component aComponent) {
       if (aComponent.equals(colValue))
         return rowValue;
-      else 
+      else
         return colValue;
     }
-    
+
     public Component getDefaultComponent(Container focusCycleRoot) {
       return colValue;
     }
-    
+
     public Component getLastComponent(Container focusCycleRoot) {
       return rowValue;
     }
-    
+
     public Component getFirstComponent(Container focusCycleRoot) {
       return colValue;
     }
