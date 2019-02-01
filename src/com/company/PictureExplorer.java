@@ -795,7 +795,12 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
       return colValue;
     }
   }
-  
+
+
+
+
+
+
   /**
    * Test Main.  It will explore the beach 
    */
