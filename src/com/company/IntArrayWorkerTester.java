@@ -24,15 +24,15 @@ public class IntArrayWorkerTester
   }
   
   /** Method to test getCount*/
-//  public static void testGetCount()
-//  {
-//    IntArrayWorker worker = new IntArrayWorker();
-//    int[][] nums = new int[3][4];
-//    worker.setMatrix(nums);
-//    worker.fillPattern1();
-//    int count = worker.getCount(1);
-//    System.out.println("Count should be 6 and count is " + count);
-//  }
+  public static void testGetCount()
+  {
+    IntArrayWorker worker = new IntArrayWorker();
+    int[][] nums = new int[3][4];
+    worker.setMatrix(nums);
+    worker.fillPattern1();
+    int count = worker.getCount(1);
+    System.out.println("Count should be 6 and count is " + count);
+ }
   
   /** Method to test getTotal */
   public static void testGetTotal()
@@ -102,5 +102,8 @@ public class IntArrayWorkerTester
     testGetTotalNested();
     //testGetLargest();
     //testGetColTotal();
+    //Picture pix = new Picture("IMG_0044.jpg");
+    //Picture p = pix.scale(0.20, 0.20);
+    testGetCount();
   }
 }
