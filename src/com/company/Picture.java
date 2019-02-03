@@ -99,6 +99,49 @@ public class Picture extends SimplePicture
       }
     }
   }
+
+  public void KeepOnlyBlue()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setBlue(0);
+        pixelObj.setGreen(0);
+      }
+    }
+  }
+
+  public void negate()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setBlue(255-(pixelObj.getBlue()));
+        pixelObj.setGreen(255-(pixelObj.getGreen()));
+        pixelObj.setRed(255-(pixelObj.getRed()));
+      }
+    }
+  }
+
+  public void grayscale()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    int avg;
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        avg = pixelObj.getBlue() + pixelObj.getRed() + pixelObj.getGreen();
+        pixelObj.setBlue(avg);
+        pixelObj.setGreen(avg);
+        pixelObj.setRed(avg);
+      }
+    }
+  }
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
@@ -229,6 +272,13 @@ public class Picture extends SimplePicture
     Picture edgeOne = beach.scale(0.25, 0.25);
     edgeOne.edgeDetection(7);
     edgeOne.explore();
+
+    //DigitalPicture p = new DigitalPicture();     //    <-----   Will not compile because DigitalPicture is an abstract class
+    //DigitalPicture p = new SimplePicture();      //    <-----   Will compile
+    //DigitalPicture p = new Picture();            //    <-----   Will compile
+    //SimplePicture p = new Picture();             //    <-----   Will compile
+    //Picture p = new SimplePicture();             //    <-----   Will not compile because Picture class does NOT inherit (extends) SimplePicture Class
+
     //beach.zeroBlue();
     //beach.explore();
   }
